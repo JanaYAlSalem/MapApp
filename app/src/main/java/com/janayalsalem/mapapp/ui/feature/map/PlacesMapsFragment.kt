@@ -14,6 +14,8 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.janayalsalem.mapapp.R
 import com.janayalsalem.mapapp.core.common.BaseFragment
+import permissions.dispatcher.RuntimePermissions
+
 
 class PlacesMapsFragment : BaseFragment() {
 

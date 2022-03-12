@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -52,6 +53,9 @@ dependencies {
     implementation Libs.googleMap
     implementation Libs.locationServices
 //    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation Libs.permissionsDispatcher
+    kapt Libs.permissionsDispatcherProcessor
+
     // to test unite
     testImplementation TestLibs.junit
     androidTestImplementation TestLibs.junitExt
