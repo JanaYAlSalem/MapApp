@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -29,6 +30,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    // to generate The key with secure
+    def localProperties = new Properties()
+    localProperties.load(new FileInputStream("local.properties"))
+
+    buildTypes {
+        debug {
+            resValue("string", "google_map_api_key", localProperties['MAPS_API_KEY'])
+        }
+    }
 }
 
 dependencies {
@@ -38,6 +49,9 @@ dependencies {
     implementation Libs.appCompat
     implementation Libs.material
     implementation Libs.constraintLayout
+    implementation Libs.googleMap
+    implementation Libs.locationServices
+//    implementation 'androidx.appcompat:appcompat:1.4.1'
     // to test unite
     testImplementation TestLibs.junit
     androidTestImplementation TestLibs.junitExt
