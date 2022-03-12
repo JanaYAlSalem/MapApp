@@ -80,6 +80,7 @@ open class BaseFragment : Fragment() {
         stopLocationUpdates()
     }
 
+    // is GPS Enabled ?
     fun isLocationEnabled() : Boolean{
         val locationManager = activity?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         return  locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
