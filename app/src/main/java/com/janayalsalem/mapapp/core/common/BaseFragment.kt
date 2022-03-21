@@ -16,9 +16,11 @@ import com.google.android.gms.location.*
  */
 
 open class BaseFragment : Fragment() {
+
     private var locationCallback: LocationCallback? = null
     private var locationRequest : LocationRequest?= null
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupLocationClient()

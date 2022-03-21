@@ -4,4 +4,7 @@
     <string name="enable_location">Enable location</string>
     <string name="enable">Enable</string>
     <string name="deny">Deny</string>
+    <string name="location_denied">Location is denied</string>
+    <string name="location_alert">Location permission is needed to be able to get the places around you</string>
+    <string name="accept">OK</string>
 </resources>
