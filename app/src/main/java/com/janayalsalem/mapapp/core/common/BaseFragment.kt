@@ -16,9 +16,11 @@ import com.google.android.gms.location.*
  */
 
 open class BaseFragment : Fragment() {
+
     private var locationCallback: LocationCallback? = null
     private var locationRequest : LocationRequest?= null
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupLocationClient()
@@ -80,6 +82,7 @@ open class BaseFragment : Fragment() {
         stopLocationUpdates()
     }
 
+    // is GPS Enabled ?
     fun isLocationEnabled() : Boolean{
         val locationManager = activity?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         return  locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
