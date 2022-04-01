@@ -1,6 +1,6 @@
 object Versions {
     val KOTLIN = "1.3.72"
-    val COMPILE_SDK = 28
+    val COMPILE_SDK = 30
     val MIN_SDK_VERSION = 16
     val TARGET_SDK_VERSION = 28
     val VERSION_CODE = 1
@@ -65,11 +65,11 @@ object Libs {
     val multidex = "androidx.multidex:multidex:${Versions.MULTIDEX}"
     val hiltAndroid = "com.google.dagger:hilt-android:${Versions.HILT}"
     val hiltAndroidCompiler = "com.google.dagger:hilt-compiler:${Versions.HILT}"
+    val hiltAndroidliveData = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.HILT}"
     val fragmentKtx =  "androidx.fragment:fragment-ktx:${Versions.FRAGMENT_KTX}"
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT_VERSION}"
     val rxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.RX_RETROFIT_ADAPTER}"
-    val loggingInterceptor =
-        "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_LOGGING_INTERCEPTOR_VERSION}"
+    val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_LOGGING_INTERCEPTOR_VERSION}"
     val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.GSON_CONVERTER}"
     val googleMap = "com.google.android.gms:play-services-maps:${Versions.GOOGLE_MAP}"
     val locationServices = "com.google.android.gms:play-services-location:${Versions.LOCATION_SERVICES}"

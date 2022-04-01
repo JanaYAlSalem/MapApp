@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+//    id 'dagger.hilt.android.plugin' //no need any more
 }
 
 android {
@@ -25,8 +26,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -52,7 +53,6 @@ dependencies {
     implementation Libs.constraintLayout
     implementation Libs.googleMap
     implementation Libs.locationServices
-//    implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation Libs.permissionsDispatcher
     kapt Libs.permissionsDispatcherProcessor
     implementation Libs.timber
@@ -61,4 +61,19 @@ dependencies {
     testImplementation TestLibs.junit
     androidTestImplementation TestLibs.junitExt
     androidTestImplementation TestLibs.espresso
+
+    //Dagger - Hilt
+
+//    implementation Libs.hiltAndroid
+//    kapt Libs.hiltAndroidCompiler
+//    implementation Libs.hiltAndroidliveData
+    implementation 'com.google.dagger:hilt-android:2.41'
+    annotationProcessor 'com.google.dagger:hilt-compiler:2.41'
+    // For instrumentation tests
+    androidTestImplementation  'com.google.dagger:hilt-android-testing:2.41'
+    androidTestAnnotationProcessor 'com.google.dagger:hilt-compiler:2.41'
+    // For local unit tests
+    testImplementation 'com.google.dagger:hilt-android-testing:2.41'
+    testAnnotationProcessor 'com.google.dagger:hilt-compiler:2.41'
+
 }
